@@ -2,6 +2,8 @@
 
 use app\Databases\DatabaseConnection;
 
+require __DIR__ . '/vendor/autoload.php';
+
 $db = require __DIR__ . '/src/Users/config/db.php';
 
 //$databaseConfiguration = new \app\Users\Databases\DatabaseConfiguration(...$db['pdo']);

@@ -4,7 +4,7 @@ use app\Databases\DatabaseConnection;
 
 require __DIR__ . '/vendor/autoload.php';
 
-$db = require __DIR__ . '/src/Users/config/db.php';
+$db = require __DIR__ . '/config/db.php';
 
 //$databaseConfiguration = new \app\Users\Databases\DatabaseConfiguration(...$db['pdo']);
 //$databaseConnection = new DatabaseConnection($databaseConfiguration);
@@ -23,11 +23,11 @@ $data = [
     'email' => 'kutlumbek@gmail.com',
     'phone' => '12345667',
     'password' => '1234567jJ',
-    'is_active' => '1',
+    'isActive' => '1',
 ];
 
 $user = $writeUserRepository->create($data);
-var_dump($user);
+print_r($user);
 
 
 

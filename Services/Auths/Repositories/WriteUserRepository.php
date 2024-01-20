@@ -9,29 +9,27 @@ class WriteUserRepository extends BaseRepository
 {
     public function getById(int $id): ?User
     {
-        $query = 'select * from users where id=? limit 1';
+        $query = 'select * from users20012024 where id=? limit 1';
 
         $sth = $this->dbh->prepare($query);
         $sth->execute([$id]);
 
         $result = $sth->fetch();
 
-        return $result ?
-            // Это неправильно:
-            new User(...$result) : null;
+        return $result ? new User(...array_values($result)) : null;
     }
 
     public function create(array $data): ?User
     {
-        $query = 'insert into users (name, email, phone, password, is_active) values (?, ?, ?, ?, ?)';
+        $query = 'insert into users20012024 (name, email, phone, password, is_active) values (?, ?, ?, ?, ?)';
 
         $sth = $this->dbh->prepare($query);
-        $sth->execute(array_values($data));
+
+        $sth->execute(\array_values($data));
 
         $result = $this->dbh->lastInsertId();
 
-        // Мы это изменим, пока так, внедрим еще один паттерн
         return $this->getById($result);
-//        return $result ? new $this->getById($result) : null;
     }
+
 }

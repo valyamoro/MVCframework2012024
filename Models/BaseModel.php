@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace app\Models;
 
-// Переходник между моделью и основной моделью
 use app\Core\Model;
 
 abstract class BaseModel extends Model

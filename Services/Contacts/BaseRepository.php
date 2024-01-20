@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace app\Services\Contacts;
 
-use app\Users\Services\Contacts\Model;
+use app\core\Model;
 
 abstract class BaseRepository
 {

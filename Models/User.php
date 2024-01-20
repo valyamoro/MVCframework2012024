@@ -10,7 +10,7 @@ class User extends BaseModel
         private string $phone,
         private string $email,
         private string $password,
-        private int $isActive,
+        private string $isActive,
     ) {
         parent::__construct($id);
     }
@@ -39,4 +39,5 @@ class User extends BaseModel
     {
         return $this->isActive;
     }
+
 }
